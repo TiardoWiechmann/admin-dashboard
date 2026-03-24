@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+}
+
+
+.container {
+    display: grid;
+    /* grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr; */
+    grid-template-columns: 200px 800px;
+    grid-template-rows: 200px 800px;
+    grid-template-areas:
+        "sidebar  header"
+        "sidebar  main";
+}
+
+.header {
+    grid-area: header;
+    background-color: white;
+}
+
+
+.sidebar {
+    background-color: lightskyblue;
+    grid-area: sidebar;
+}
+
+.main {
+    background-color: rgb(229, 230, 231);
+    grid-area: main;
+}
+
