@@ -1,5 +1,11 @@
+
+
+
+
 :root {
     --blue: rgb(7, 139, 216);
+    --grey: rgb(229, 230, 231);
+    --card-radius: 5%;
 }
 
 * {
@@ -7,13 +13,15 @@
     box-sizing: border-box;
 }
 
+body {
+    width: clamp(1000px, 80vw, 1300px);
+    margin: 0 auto;
+}
 
 .container {
     display: grid;
-    /* grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr; */
-    grid-template-columns: 200px 800px;
-    grid-template-rows: 200px 800px;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5.5fr;
     grid-template-areas:
         "sidebar  header"
         "sidebar  main";
@@ -21,28 +29,44 @@
 
 .searchbar {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 8fr;
+    align-content: center;
+    align-items: center;
+}
+
+.searchbar label {
+    display: flex;
+    align-content: center;
+}
+
+input {
+    background-color: var(--grey);
+    border: none;
+    border-radius: 1rem;
+    padding: 5px 10px;
+    height: 2.2rem;
 }
 
 .header {
     grid-area: header;
     background-color: white;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 10px 40px;
+    row-gap: 20px;
 }
 
 .personal {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 30px;
 }
 
 .greeting {
     display:flex;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -66,10 +90,140 @@ button {
     background-color: var(--blue);
     grid-area: sidebar;
     color: white;
+    display: grid;
+    grid-template-rows: 1fr 5fr 4fr;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.heading {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    column-gap: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.heading img {
+    height: 3.5rem;
+    width: auto;
+    filter: invert(1);
+}
+
+.menu {
+    display: grid;
+    grid-template-rows: 5fr 3fr;
+    row-gap: 30px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.menu img {
+    width: auto;
+    height: 2rem;
+    filter: invert(1);
+}
+
+.main-options,
+.setting-options {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+}
+
+.icon-pair {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    column-gap: 18px;
 }
 
 .main {
-    background-color: rgb(229, 230, 231);
+    background-color: var(--grey);
     grid-area: main;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 3fr 3fr;
+    grid-template-areas: 
+        "projects  announcements"
+        "projects  trending";
+    padding: 30px 25px;
+    gap: 30px;
 }
+
+.projects,
+.announcements,
+.trending {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.p-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: var(--card-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.announce-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border-radius: var(--card-radius);
+    padding: 30px 20px;
+    row-gap: 15px;
+}
+
+hr {
+    margin-top: 15px;
+}
+
+.announce-cards,
+.trend-cards {
+    background-color: white;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.trend-cards {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 10px;
+    border-radius: var(--card-radius);
+    padding: 20px;
+}
+
+.t-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 
