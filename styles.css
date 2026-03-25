@@ -24,7 +24,6 @@
 .container {
     width: clamp(1100px, 80vw, 1300px);
     margin: 0 auto;
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 6fr;
@@ -115,7 +114,7 @@ button {
     grid-area: sidebar;
     color: white;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 1fr 8fr;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -160,10 +159,13 @@ h1 {
 }
 
 .icon-pair {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+    display: flex;
+    gap: 23px;
     align-items: center;
-    column-gap: 18px;
+}
+
+.icon-pair > div {
+    padding-top: 0.2rem;
 }
 
 .main {
@@ -177,6 +179,7 @@ h1 {
         "projects  trending";
     padding: 30px 25px;
     gap: 30px;
+    box-shadow: inset 0 3px 5px rgb(161, 161, 161);
 }
 
 .main p,
@@ -210,9 +213,22 @@ h2 {
     background: white;
     padding: 30px 20px;
     border-radius: var(--card-radius);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1rem 1fr 3rem;
     gap: 10px;
+    border-left: 10px solid rgba(252, 124, 4, 0.7);
+
+}
+
+.icons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.icons img {
+    filter: invert(0.5);
 }
 
 .announcements {
@@ -256,15 +272,14 @@ h4 {
 
 .t-card {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
 }
 
 .t-person {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 5px;
 }
 
 
